@@ -1,7 +1,7 @@
 from aoc import *
 import numpy as np
 
-data = np.array(mapl(integers, read_input(6))[0])
+data = np.array(mapl(integers, read_input(6, sep=",")))
 fishes_by_gen = np.array([0] * 9, dtype='int64')
 
 for i in range(9):
@@ -13,7 +13,7 @@ def birth(fishes):
     return fishes
 
 def solve(fishes, days):
-    for i in range(days):
+    for _ in range(days):
         fishes = birth(fishes)
     print(fishes.sum())
 
